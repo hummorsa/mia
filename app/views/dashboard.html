@@ -1,0 +1,52 @@
+<div class="container">
+
+
+    <input type="text" class=" idinput form-control" ng-model="cedula" placeholder="Digite el número de cédula">
+
+    <button type="submit" ng-click="SearchByCedula()" class=" searchBtn btn-primary form-control btn-block">Buscar</button>
+
+    <div ng-if="userResult" class="row">
+        <div class="col-xs-12 col-sm-12 col-md-6 col-lg-6 col-xs-offset-0 col-sm-offset-0 col-md-offset-3 col-lg-offset-3 toppad" >
+            <div class="panel panel-info">
+                <div class="panel-heading">
+                    <h3 class="panel-title">{{userResult.nombre}} {{userResult.ap1}} {{userResult.ap2}}</h3>
+                </div>
+                <div class="panel-body">
+                    <div class="row">
+                        <div class="col-md-3 col-lg-3 " align="center"> <img alt="User Pic" src="https://lh5.googleusercontent.com/-b0-k99FZlyE/AAAAAAAAAAI/AAAAAAAAAAA/eu7opA4byxI/photo.jpg?sz=100" class="img-circle"> </div>
+                        <div class=" col-md-9 col-lg-9 ">
+                            <table class="table table-user-information">
+                                <tbody>
+                                <tr>
+                                    <td>Numero de cédula:</td>
+                                    <td>{{userResult.ced}}</td>
+                                </tr>
+                                <tr>
+                                    <td>Nombre:</td>
+                                    <td>{{userResult.nombre}}</td>
+                                </tr>
+                                <tr>
+                                    <td>Apellidos:</td>
+                                    <td>{{userResult.ap1}} {{userResult.ap2}}</td>
+                                </tr>
+                                <tr>
+                                    <td>Sexo:</td>
+                                    <td>{{userResult.sexo | sexFilter}}</td>
+                                </tr>
+                                <tr>
+                                    <td>Vencimiento cédula: </td>
+                                    <td>{{userResult.venced | vencimientoCed}}</td>
+                                </tr>
+
+                                </tbody>
+                            </table>
+
+                        </div>
+                    </div>
+                </div>
+
+
+            </div>
+        </div>
+    </div>
+</div>

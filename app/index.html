@@ -6,14 +6,43 @@
 
     <title>Demo</title>
     <link type="text/css" rel="stylesheet" href="/bower_components/bootstrap/dist/css/bootstrap.css" />
+    <link type="text/css" rel="stylesheet" href="css/main.css" />
 
 </head>
-<body>
-<div class="container-fluid">
-    hola lola
+<body ng-app="padronApp" >
+
+<nav ng-controller='NavegationBarController' class="navbar navbar-default navbar-fixed-top">
+        <ul class="nav navbar-nav">
+            <li class="active"><a href="#/">Home</a></li>
+            <li><a  ng-href="#/login"><span class="glyphicon glyphicon-user"> </span> {{copy.login}}</a></li>
+            <li ng-show="currentUser.active" ><a ng-click="Logout()">Log Out</a></li>
+        </ul>
+</nav>
+
+<div  class="container-fluid" ng-view="" >
+
 </div>
 
+<script>
+
+</script>
 
 <script src="/bower_components/requirejs/require.js"></script>
+<script src="/bower_components/jQuery/dist/jquery.js"></script>
+<script src="/bower_components/angular/angular.js"></script>
+<script src="/bower_components/angular-route/angular-route.min.js"></script>
+<script src="/bower_components/parse-js-sdk/lib/parse.min.js"></script>
+
+<script src="js/filters/filters.js"></script>
+<script src="js/main.js"></script>
+
+<script src="js/services/UserService.js"></script>
+<script src="js/services/SearchService.js"></script>
+
+<script src="js/controllers/MainController.js"></script>
+<script src="js/controllers/LoginController.js"></script>
+<script src="js/controllers/NavegationBarController.js"></script>
+<script src="js/controllers/DashboardController.js"></script>
+
 </body>
 </html>
